@@ -1,9 +1,29 @@
-🏦 Akyba - Blockchain-Based Tontine & CIP-68 Minting Prototype
-🚀 Akyba is a decentralized tontine prototype and CIP-68 token minting system built on the Cardano blockchain.
-It utilizes Aiken for the smart contract and Lucid Evolution for off-chain integration with Next.js.
+📄 Lightpaper - Akyba: Reinventing Community Savings with Blockchain
+Abstract
+Tontines have been a trusted form of community savings for centuries, offering financial security and collective investment. However, traditional tontines suffer from challenges such as fraud risks, lack of transparency, and absence of financial growth.
 
-📌 Key Features
-Aiken Smart Contract for managing tontines
-CIP-68 NFT Minting using Lucid Evolution
-Integration with Cardano Wallets (Nami, Eternl, Lace)
-Interaction with Blockfrost for transaction submission
+Akyba is a next-generation blockchain-powered tontine that eliminates these issues by leveraging the Cardano blockchain, smart contracts, and DeFi mechanisms.
+
+🔎 Problems with Traditional Tontines
+Lack of Trust – Centralized organizers can mismanage funds.
+Opacity – Participants have no visibility into the funds' movements.
+No Yield Generation – Traditional tontines do not grow assets.
+🌟 Akyba’s Vision
+Akyba transforms tontines into transparent, yield-generating, and decentralized savings systems using smart contracts. Key innovations include:
+
+Trustless execution – Funds are managed automatically by PlutusV3 smart contracts.
+Transparency – Transactions are recorded immutably on Cardano.
+DeFi-powered yield – Contributions are invested in staking, lending, and yield farming.
+🔗 How It Works
+Contribution Phase – Users lock their funds into the tontine contract.
+Investment Phase – Funds are automatically allocated to yield-generating strategies.
+Distribution Phase – At the end of the cycle, users receive returns proportional to their participation.
+Governance with DAO – Participants vote on investment strategies and rule changes.
+🛠 Key Technologies
+Aiken – Smart contract language for Plutus V3.
+Lucid Evolution – TypeScript SDK for Cardano interactions.
+Blockfrost API – Query blockchain data.
+CIP-68 NFTs – Represent tontine ownership transparently.
+🚀 Conclusion
+Akyba modernizes tontines, turning them into self-executing, yield-generating financial tools.
+Join the future of community savings with Akyba. 🌍💰
