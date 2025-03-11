@@ -136,3 +136,12 @@ Spec ==
     /\ CautionNonNegative
 
 =============================================================================
+
+
+
+Step 20: picking a transition out of 6 transition(s)              I@00:33:50.011
+The outcome is: NoError                                           I@00:33:50.128
+Checker reports no error up to computation length 20              I@00:33:50.129
+It took me 0 days  0 hours  6 min 56 sec                          I@00:33:50.129
+Total time: 416.193 sec                                           I@00:33:50.130
+EXITCODE: OK
