@@ -11,7 +11,7 @@ No Yield Generation – Traditional tontines do not grow assets.
 🌟 Akyba’s Vision
 Akyba transforms tontines into transparent, yield-generating, and decentralized savings systems using smart contracts. Key innovations include:
 
-Trustless execution – Funds are managed automatically by PlutusV3 smart contracts.
+Trustless execution – Funds are managed automatically by Aiken smart contracts.
 Transparency – Transactions are recorded immutably on Cardano.
 DeFi-powered yield – Contributions are invested in staking, lending, and yield farming.
 🔗 How It Works
