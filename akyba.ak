@@ -134,19 +134,77 @@ pub fn next_round(datum: Datum, redeemer: Redeemer, _tx: Transaction) -> Bool {
 pub fn contribute(datum: Datum, redeemer: Redeemer, tx: Transaction) -> Bool {
   when redeemer is {
     Contribute -> {
-      let total_contributed =
-        list.length(datum.active_participants) * datum.contribution_amount
+      // ✅ Ensure only active participants contribute
+      let valid_contributors =
+        list.filter(
+          datum.active_participants,
+          fn(p: Participant) -> Bool {
+            // ✅ Ensure contributor is in the extra_signatories
+            let is_signer =
+              list.any(
+                tx.extra_signatories,
+                fn(sig: VerificationKeyHash) -> Bool { sig == p.pubkey },
+              )
 
-      let received_ada =
-        list.foldl(
-          tx.outputs,
-          0,
-          fn(out: Output, acc: Int) -> Int {
-            acc + assets.lovelace_of(out.value)
+            // ✅ Ensure contributor receives funds in outputs
+            let expected_address = address.from_verification_key(p.pubkey)
+
+            let is_in_outputs =
+              list.any(
+                tx.outputs,
+                fn(output: Output) -> Bool {
+                  let is_matching = output.address == expected_address
+
+                  is_matching
+                },
+              )
+
+            // ✅ Only allow signers who are in active participants
+            is_signer && is_in_outputs
           },
         )
 
-      received_ada == datum.common_pot + total_contributed
+      // ✅ Ensure at least one valid participant is contributing
+      if list.length(valid_contributors) == 0 {
+        trace @"❌ No valid participants found!"
+        False
+      } else {
+        // ✅ Get total ADA in valid outputs
+        let total_lovelace =
+          list.foldl(
+            list.filter(
+              tx.outputs,
+              fn(output: Output) -> Bool {
+                list.any(
+                  datum.active_participants,
+                  fn(p: Participant) -> Bool {
+                    let expected_address =
+                      address.from_verification_key(p.pubkey)
+                    output.address == expected_address
+                  },
+                )
+              },
+            ),
+            0,
+            fn(output: Output, acc: Int) -> Int {
+              acc + assets.lovelace_of(output.value)
+            },
+          )
+
+        // ✅ Calculate expected contribution
+        let expected_total =
+          list.length(valid_contributors) * datum.contribution_amount
+
+        // ✅ Ensure contribution matches with a small buffer for fees
+        let fee_tolerance = 2_000_000
+        let amount_difference =
+          math.abs(total_lovelace - ( datum.common_pot + expected_total ))
+
+        let valid_amount =
+          amount_difference >= 0 && amount_difference <= fee_tolerance
+
+        valid_amount
+      }
     }
     _ -> False
   }
