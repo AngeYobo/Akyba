@@ -134,19 +134,16 @@ pub fn next_round(datum: Datum, redeemer: Redeemer, _tx: Transaction) -> Bool {
 pub fn contribute(datum: Datum, redeemer: Redeemer, tx: Transaction) -> Bool {
   when redeemer is {
     Contribute -> {
-      // ✅ Ensure only active participants contribute
       let valid_contributors =
         list.filter(
           datum.active_participants,
           fn(p: Participant) -> Bool {
-            // ✅ Ensure contributor is in the extra_signatories
             let is_signer =
               list.any(
                 tx.extra_signatories,
                 fn(sig: VerificationKeyHash) -> Bool { sig == p.pubkey },
               )
 
-            // ✅ Ensure contributor receives funds in outputs
             let expected_address = address.from_verification_key(p.pubkey)
 
             let is_in_outputs =
@@ -159,17 +156,14 @@ pub fn contribute(datum: Datum, redeemer: Redeemer, tx: Transaction) -> Bool {
                 },
               )
 
-            // ✅ Only allow signers who are in active participants
             is_signer && is_in_outputs
           },
         )
 
-      // ✅ Ensure at least one valid participant is contributing
       if list.length(valid_contributors) == 0 {
         trace @"❌ No valid participants found!"
         False
       } else {
-        // ✅ Get total ADA in valid outputs
         let total_lovelace =
           list.foldl(
             list.filter(
@@ -191,24 +185,30 @@ pub fn contribute(datum: Datum, redeemer: Redeemer, tx: Transaction) -> Bool {
             },
           )
 
-        // ✅ Calculate expected contribution
         let expected_total =
-          list.length(valid_contributors) * datum.contribution_amount
+          list.length(valid_contributors) * datum.contribution_amount + tx.fee
 
-        // ✅ Ensure contribution matches with a small buffer for fees
-        let fee_tolerance = 2_000_000
+        let fee_tolerance = math.max(tx.fee, 2_000_000)
+        let expected_total =
+          list.length(valid_contributors) * datum.contribution_amount + tx.fee
+
         let amount_difference =
           math.abs(total_lovelace - ( datum.common_pot + expected_total ))
 
-        let valid_amount =
-          amount_difference >= 0 && amount_difference <= fee_tolerance
+        let valid_fee = tx.fee >= 1_000_000
 
-        valid_amount
+        let valid_amount = amount_difference <= fee_tolerance
+
+        let is_valid_transaction = valid_fee && valid_amount
+
+        is_valid_transaction
       }
     }
+
     _ -> False
   }
 }
+
 
 // ** Main Validator Function **
 validator akyba {
