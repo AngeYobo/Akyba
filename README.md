@@ -91,7 +91,7 @@ Cardano’s low transaction fees, energy-efficient consensus mechanism, and high
 ---
 
 ### Conclusion:
-Akyba offers a revolutionary way for communities to save, invest, and support one another. By combining the time-tested principles of tontines with the cutting-edge capabilities of blockchain technology, Akyba brings transparency, security, and growth to an age-old system. Through decentralized governance, yield optimization, CIP-721 NFT integration, and automated smart contracts, Akyba empowers participants to take control of their financial future in a way that was never before possible.
+Akyba offers a revolutionary way for communities to save, invest, and support one another. By combining the time-tested principles of tontines with the cutting-edge capabilities of blockchain technology, Akyba brings transparency, security, and growth to an age-old system. Through decentralized governance, yield optimization, CIP-68 NFT integration, and automated smart contracts, Akyba empowers participants to take control of their financial future in a way that was never before possible.
 
 ---
 
