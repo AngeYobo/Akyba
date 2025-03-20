@@ -26,8 +26,9 @@ Akyba transforms the traditional tontine into a transparent, decentralized, and 
 Akyba turns a stagnant savings mechanism into a dynamic, yield-generating engine.
 
 ---
-##### Akyba overview
-![image](https://github.com/user-attachments/assets/f08e11ca-fae0-423a-a1c7-26a7f246458d)
+##### Akyba Rosca type Overview
+![image](https://github.com/user-attachments/assets/1407cce6-4619-443d-a0a4-387025aa74a9)
+
 
 ---
 ### Key Features of Akyba
