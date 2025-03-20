@@ -24,6 +24,9 @@ Aiken – Smart contract language for Plutus V3.
 Lucid Evolution – TypeScript SDK for Cardano interactions.
 Blockfrost API – Query blockchain data.
 CIP-68 NFTs – Represent tontine ownership transparently.
+##### Akyba Protocol Overview
+![image](https://github.com/user-attachments/assets/30c4cd09-20c6-446d-b456-6a57b6e0340e)
+
 🚀 Conclusion
 Akyba modernizes tontines, turning them into self-executing, yield-generating financial tools.
 Join the future of community savings with Akyba. 🌍💰
