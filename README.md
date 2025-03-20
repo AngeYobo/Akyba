@@ -27,7 +27,7 @@ Akyba turns a stagnant savings mechanism into a dynamic, yield-generating engine
 
 ---
 ##### Akyba overview
-![image](https://github.com/user-attachments/assets/98d1bc35-f399-42db-9f4a-80aa27b0f507)
+![image](https://github.com/user-attachments/assets/f08e11ca-fae0-423a-a1c7-26a7f246458d)
 
 ---
 ### Key Features of Akyba
