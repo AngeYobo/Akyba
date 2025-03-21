@@ -54,7 +54,7 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 
 ## How Akyba Works
 
-### 05 Contribution Phase
+### -> Contribution Phase
 - Participants lock ADA into the tontine contract.
 - CIP-68 NFT and Merkle proof are generated.
 - On-chain validator checks proof against MPF root.
