@@ -26,6 +26,9 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 - Off-chain authenticated key/value trie structure.
 - Used to efficiently validate participant membership on-chain with **compact proofs**.
 
+![image](https://github.com/user-attachments/assets/f4cf796d-2abf-4c77-b554-e2e3262a2579)
+
+
 ### ✅ CIP-68 NFTs
 - Issued to every participant on joining a tontine.
 - Metadata tracks:
@@ -51,7 +54,7 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 
 ## How Akyba Works
 
-### Ὃ5 Contribution Phase
+### 05 Contribution Phase
 - Participants lock ADA into the tontine contract.
 - CIP-68 NFT and Merkle proof are generated.
 - On-chain validator checks proof against MPF root.
@@ -80,7 +83,8 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 - Periodic fund disbursements per round.
 - Pool remains partially staked during the cycle.
 ##### Akyba Rosca type Overview
-![image](https://github.com/user-attachments/assets/65aa515b-1458-4733-8b20-50213244b2b8)
+![image](https://github.com/user-attachments/assets/86fe6e23-7924-4372-8fd2-821f5d911e4d)
+
 
 
 ### Variable Contribution
