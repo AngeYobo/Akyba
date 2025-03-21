@@ -16,45 +16,61 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 
 ---
 
-## Akyba: Formal Specification and Verification
-### Formal Verification and Mathematical Soundness
-##### Motivation
----
-To ensure the security, fairness, and correctness of the Akyba tontine system, we have formally specified
-its behaviors using Temporal Logic of Actions (TLA+), a formal specification language developed by
-Leslie Lamport for reasoning about distributed systems.
----
-## TLA+ Specification Overview
-### The Akyba TLA+ model captures:
-• Active participants and their balances (Collateral)
-• A queue of candidates awaiting selection (FileAttente)
-• A shared savings pool (Total_Pool_Funds)
-• A distribution log (OrdreTirage) capturing winner, amount, and cycle
-• Cycle management through Tour and Cycle
-• Contribution decisions represented by a sequence of booleans (Choix)
-### Key Invariants and Properties
-We validated the following invariants to ensure protocol resilience:
-Fairness: Every participant receives the community fund at least once per cycle:
-∀p ∈ Participants, ∃i ∈ DOMAIN(OrdreTirage) : OrdreTirage[i]3 = p
-###Non-Negative Collateral: No participant’s balance (Collateral) can fall below zero:
-∀p ∈ Participants : Collateral[p] ≥ 0
-Liveness: The system always makes progress:
-∃t ∈ {Contribuer, Selectionner, Attribuer, VerifierCollateral, PasserAuTourSuivant}
-### Model Checking Results
-Using the Apalache model checker, the system was verified to:
-• Respect fairness constraints for all participants
-• Guarantee that no participant’s balance drops below zero
-• Ensure continuous operation (liveness) for at least 20 transitions
-• Validate state transitions with a computation depth of 20 in under 7 minutes
-2
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
 
-This formal specification confirms that the Akyba protocol:
-• Prevents fraudulent manipulations
-• Ensures fair distribution across all participants
-• Maintains system correctness under all expected behaviors
-Strengthen confidence in Akyba implementation and show the advantage of formally verified decentralized
-protocols.
-3
+\title{Formal Verification of Akyba}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{TLA+ Formal Verification}
+
+We formally specify the Akyba tontine protocol using TLA+ to ensure fairness, correctness, and resilience.
+
+\subsection*{Key Invariants}
+
+\textbf{Fairness:} Every participant receives the community fund at least once per cycle:
+
+\[
+\forall p \in \text{Participants},\ \exists i \in \text{DOMAIN}(\text{OrdreTirage}) : \text{OrdreTirage}[i][3] = p
+\]
+
+\textbf{Non-Negative Cautions:} No participant’s balance (\texttt{Cautions}) can fall below zero:
+
+\[
+\forall p \in \text{Participants},\ \text{Cautions}[p] \geq 0
+\]
+
+\textbf{Liveness:} The system always makes progress:
+
+\[
+\exists t \in \{\text{Contribuer}, \text{Selectionner}, \text{Attribuer}, \text{VerifierCautions}, \text{PasserAuTourSuivant}\}
+\]
+
+\subsection*{Apalache Model Checking Results}
+
+The Apalache model checker verified:
+
+\begin{itemize}
+  \item \textbf{Transitions Checked:} 20
+  \item \textbf{Fairness Preserved:} ✅
+  \item \textbf{Invariant Preservation:} ✅
+  \item \textbf{Execution Time:} 416 seconds
+  \item \textbf{Result:} No errors found
+\end{itemize}
+
+\subsection*{Conclusion}
+
+With TLA+ formal verification, Akyba offers a mathematically sound foundation for decentralized community savings.
+
+\end{document}
 
 
 ## The Akyba Architecture
