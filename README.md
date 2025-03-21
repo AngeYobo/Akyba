@@ -79,6 +79,9 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 ### Rotative Tontine (ROSCA)
 - Periodic fund disbursements per round.
 - Pool remains partially staked during the cycle.
+##### Akyba Rosca type Overview
+![image](https://github.com/user-attachments/assets/65aa515b-1458-4733-8b20-50213244b2b8)
+
 
 ### Variable Contribution
 - Members can contribute different amounts.
