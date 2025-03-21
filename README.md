@@ -15,63 +15,9 @@ Tontines are collective savings systems where members contribute to a common poo
 Despite these limitations, the community aspect of tontines remains valuable. The challenge is to modernize this structure while preserving its core benefits.
 
 ---
+![image](https://github.com/user-attachments/assets/417a0956-c3a6-48b6-840c-17deb73a9a73)
 
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath, amssymb}
-\usepackage{geometry}
-\geometry{margin=1in}
-
-\title{Formal Verification of Akyba}
-\author{}
-\date{}
-
-\begin{document}
-
-\maketitle
-
-\section*{TLA+ Formal Verification}
-
-We formally specify the Akyba tontine protocol using TLA+ to ensure fairness, correctness, and resilience.
-
-\subsection*{Key Invariants}
-
-\textbf{Fairness:} Every participant receives the community fund at least once per cycle:
-
-\[
-\forall p \in \text{Participants},\ \exists i \in \text{DOMAIN}(\text{OrdreTirage}) : \text{OrdreTirage}[i][3] = p
-\]
-
-\textbf{Non-Negative Cautions:} No participant’s balance (\texttt{Cautions}) can fall below zero:
-
-\[
-\forall p \in \text{Participants},\ \text{Cautions}[p] \geq 0
-\]
-
-\textbf{Liveness:} The system always makes progress:
-
-\[
-\exists t \in \{\text{Contribuer}, \text{Selectionner}, \text{Attribuer}, \text{VerifierCautions}, \text{PasserAuTourSuivant}\}
-\]
-
-\subsection*{Apalache Model Checking Results}
-
-The Apalache model checker verified:
-
-\begin{itemize}
-  \item \textbf{Transitions Checked:} 20
-  \item \textbf{Fairness Preserved:} ✅
-  \item \textbf{Invariant Preservation:} ✅
-  \item \textbf{Execution Time:} 416 seconds
-  \item \textbf{Result:} No errors found
-\end{itemize}
-
-\subsection*{Conclusion}
-
-With TLA+ formal verification, Akyba offers a mathematically sound foundation for decentralized community savings.
-
-\end{document}
-
+---
 
 ## The Akyba Architecture
 
