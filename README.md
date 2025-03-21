@@ -16,8 +16,7 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 
 ---
 ## Formal Verification of Akyba
-With TLA+ formal verification, Akyba offers a mathematically sound foundation for decentralized commu-
-nity savings
+With TLA+ formal verification, Akyba offers a mathematically sound foundation for decentralized community savings
 
 ![image](https://github.com/user-attachments/assets/91616a0b-2427-4561-88d2-3bda7f73a396)
 
@@ -34,7 +33,7 @@ nity savings
 - Used to efficiently validate participant membership on-chain with **compact proofs**.
 
 ![image](https://github.com/user-attachments/assets/f4cf796d-2abf-4c77-b554-e2e3262a2579)
-
+---
 
 ### ✅ CIP-68 NFTs
 - Issued to every participant on joining a tontine.
