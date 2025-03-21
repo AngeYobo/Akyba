@@ -15,7 +15,11 @@ Tontines are collective savings systems where members contribute to a common poo
 Despite these limitations, the community aspect of tontines remains valuable. The challenge is to modernize this structure while preserving its core benefits.
 
 ---
-![image](https://github.com/user-attachments/assets/417a0956-c3a6-48b6-840c-17deb73a9a73)
+## Formal Verification of Akyba
+With TLA+ formal verification, Akyba offers a mathematically sound foundation for decentralized commu-
+nity savings
+
+![image](https://github.com/user-attachments/assets/91616a0b-2427-4561-88d2-3bda7f73a396)
 
 ---
 
