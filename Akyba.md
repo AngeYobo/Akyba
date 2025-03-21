@@ -1,4 +1,4 @@
-**Akyba: A Formal Tontine Model**
+#**Akyba: A Formal Tontine Model**
 
 ## **1. Introduction**
 Tontine is a financial mechanism where a group of participants contribute a fixed amount at regular intervals, and the pooled funds are distributed to members based on a defined set of rules. 
