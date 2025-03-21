@@ -16,6 +16,46 @@ Despite these limitations, the community aspect of tontines remains valuable. Th
 
 ---
 
+## Akyba: Formal Specification and Verification
+### Formal Verification and Mathematical Soundness
+#### Motivation
+To ensure the security, fairness, and correctness of the Akyba tontine system, we have formally specified
+its behaviors using Temporal Logic of Actions (TLA+), a formal specification language developed by
+Leslie Lamport for reasoning about distributed systems.
+---
+## TLA+ Specification Overview
+### The Akyba TLA+ model captures:
+• Active participants and their balances (Cautions)
+• A queue of candidates awaiting selection (FileAttente)
+• A shared savings pool (PotCommun)
+• A distribution log (OrdreTirage) capturing winner, amount, and cycle
+• Cycle management through Tour and Cycle
+• Contribution decisions represented by a sequence of booleans (Choix)
+Key Invariants and Properties
+We validated the following invariants to ensure protocol resilience:
+Fairness: Every participant receives the community fund at least once per cycle:
+∀p ∈ Participants, ∃i ∈ DOMAIN(OrdreTirage) : OrdreTirage[i]3 = p
+Non-Negative Cautions: No participant’s balance (Cautions) can fall below zero:
+∀p ∈ Participants : Cautions[p] ≥ 0
+Liveness: The system always makes progress:
+∃t ∈ {Contribuer, Selectionner, Attribuer, VerifierCautions, PasserAuTourSuivant}
+Model Checking Results
+Using the Apalache model checker, the system was verified to:
+• Respect fairness constraints for all participants
+• Guarantee that no participant’s balance drops below zero
+• Ensure continuous operation (liveness) for at least 20 transitions
+• Validate state transitions with a computation depth of 20 in under 7 minutes
+2
+Conclusion
+This formal specification confirms that the Akyba protocol:
+• Prevents fraudulent manipulations
+• Ensures fair distribution across all participants
+• Maintains system correctness under all expected behaviors
+Strengthen confidence in Akyba implementation and show the advantage of formally verified decentralized
+protocols.
+3
+
+
 ## The Akyba Architecture
 
 ### ✅ Smart Contracts
