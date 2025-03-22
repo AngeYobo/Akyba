@@ -21,6 +21,11 @@ With TLA+ formal verification, Akyba offers a mathematically sound foundation fo
 ![image](https://github.com/user-attachments/assets/91616a0b-2427-4561-88d2-3bda7f73a396)
 
 ---
+### Akyba Cycles Visualization
+![image](https://github.com/user-attachments/assets/88edc3b5-99db-450f-8b92-d3ddb60e7a3a)
+
+
+---
 
 ## The Akyba Architecture
 
